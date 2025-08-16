@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Helper Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <h1 class="nav-title">📚 Study Helper Toolkit</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- To-Do List Section -->
+            <div class="section todo-section">
+                <h2>📝 To-Do List</h2>
+                <div class="todo-input-container">
+                    <input type="text" id="todoInput" placeholder="Enter a new task..." maxlength="100">
+                    <button id="addTodoBtn">Add Task</button>
+                </div>
+                <ul class="todo-list" id="todoList"></ul>
+            </div>
+
+            <!-- Daily Goals Tracker -->
+            <div class="section goals-section">
+                <h2>🎯 Daily Goals</h2>
+                <div class="goals-input-container">
+                    <input type="text" id="goalInput" placeholder="Enter a daily goal..." maxlength="80">
+                    <button id="addGoalBtn">Add Goal</button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0% Complete</div>
+                </div>
+                <ul class="goals-list" id="goalsList"></ul>
+            </div>
+
+            <!-- Exam Countdown -->
+            <div class="section countdown-section">
+                <h2>⏰ Exam Countdown</h2>
+                <div class="countdown-input-container">
+                    <input type="text" id="examName" placeholder="Exam Name" maxlength="50">
+                    <input type="date" id="examDate">
+                    <button id="addCountdownBtn">Add Countdown</button>
+                </div>
+                <ul class="countdown-list" id="countdownList"></ul>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Pomodoro Timer -->
+            <div class="section timer-section">
+                <h2>🍅 Pomodoro Timer</h2>
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <div class="timer-text" id="timerText">25:00</div>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="startBtn">Start</button>
+                        <button id="pauseBtn">Pause</button>
+                        <button id="resetBtn">Reset</button>
+                    </div>
+                    <div class="timer-settings">
+                        <label>
+                            <span>Study (min)</span>
+                            <input type="number" id="studyMinutes" value="25" min="1" max="60">
+                        </label>
+                        <label>
+                            <span>Break (min)</span>
+                            <input type="number" id="breakMinutes" value="5" min="1" max="30">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Pad -->
+            <div class="section notes-section">
+                <h2>📄 Notes Pad</h2>
+                <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+                <div class="notes-controls">
+                    <button id="saveNotesBtn">Save Note</button>
+                    <button id="clearNotesBtn">Clear Notes</button>
+                </div>
+            </div>
+
+            <!-- Motivational Quotes -->
+            <div class="section quotes-section">
+                <h2>💡 Motivational Quotes</h2>
+                <div class="quote-display">
+                    <p class="quote-text" id="quoteText">Click below to get inspired!</p>
+                </div>
+                <button id="newQuoteBtn">New Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built for students, by a student</p>
+    </footer>
+
+    <!-- Audio element for timer notifications -->
+    <audio id="timerSound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
